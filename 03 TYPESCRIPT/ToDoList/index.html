@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <script src="script.js" defer></script>
+    <style>
+        body {
+            display: grid;
+            place-items: center;
+            background-color: papayawhip;
+        }
+        input, button {
+            padding: 10px;
+            margin: 5px;
+        }
+        ul {
+            list-style-type: none;
+        }
+        .visualizzaBut {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>To-Do List</h1>
+    <fieldset>
+        <input type="text" placeholder="Aggiungi attività" id="inputAggiungi">
+        <button type="button" id="bottoneAggiungi">Aggiungi</button>
+        <br/>
+        <input type="text" placeholder="Rimuovi attività" id="inputRimuovi">
+        <button type="button" id="bottoneRimuovi">Rimuovi</button>
+        <br/>
+        <div class="visualizzaBut">
+            <button type="button" id="bottoneVisualizza">Visualizza</button>
+        </div>
+        <ul id="lista"></ul>
+    </fieldset>
+</body>
+</html>

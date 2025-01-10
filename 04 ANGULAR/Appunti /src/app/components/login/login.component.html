@@ -1,0 +1,41 @@
+<!--<h1>Template driven form</h1>
+<form #form="ngForm" (ngSubmit)="inviaDati(form)">
+    <div>
+        <label for = "username">Username: </label>
+        <input [(ngModel)]="utente.username" type="text" name="username" required>
+        <div *ngIf="form.submitted && !utente.username"> Lo username è obbligatorio</div>
+    </div>
+    <div>
+        <label for = "email">Email: </label>
+        <input [(ngModel)]="utente.email" type="email" name="email" required>
+        <div *ngIf="form.submitted && !utente.email"> L'email è obbligatoria</div>
+    </div>
+    <div>
+        <label for = "password">Password: </label>
+        <input [(ngModel)]="utente.password" type="password" name="password" required>
+        <div *ngIf="form.submitted && !utente.password"> La password è obbligatoria</div>
+    </div>
+    <button type="submit">Invia</button>
+
+    
+</form>
+<hr>-->
+<h1>Reactive Form</h1>
+<form [formGroup]="myForm">
+    <div>
+        <label for ="name">Name </label>
+        <input type="text" formControlName="name">
+        <div *ngIf="myForm.get('name')?.invalid && myForm.get('name')?.touched">Il nome è obbligatorio</div>
+    </div>
+    <div>
+        <label for ="email">Email </label>
+        <input type="email" formControlName="email">
+        <div *ngIf="myForm.get('email')?.invalid && myForm.get('email')?.touched">Inserire un email corretta</div> 
+    </div>
+    <div>
+        <label for ="password">Password </label>
+        <input type="password" formControlName="password">
+        <div *ngIf="myForm.get('password')?.invalid && myForm.get('password')?.touched">La password è obbligatoria </div>
+    </div>
+    <button (click)="sendData()">Invia</button>
+</form>

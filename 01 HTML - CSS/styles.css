@@ -1,0 +1,142 @@
+:root {
+    --main-color:#3314a6;
+    --arancione:#f2884b;
+    --giallo: #f2eeb3;
+
+}
+
+h1 {
+font-size: 3em;
+text-align: center;
+}
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    border: 2px solid var(--arancione);
+    padding: 15px 0;
+    margin: 0;   
+    text-align: left;
+    font-size: large;
+    font-weight: bold;
+}
+
+nav ul li:hover {
+    background-color: var(--arancione);
+}
+
+section {
+    padding: 1em;
+}
+
+
+a {
+    color: black;
+}
+
+a [href="https://testflight.apple.com/join/FT1JYCDt"]:visited {
+    color: var(--arancione);
+}
+
+#cosa_fai {
+    display: flex;
+
+}
+
+form {
+    text-align: left;
+    font-weight: bold;
+    margin: 1em auto;   
+}
+
+form label {
+ display: block;
+ margin-top: 1em;
+}
+
+ #genere {
+    display: flex;
+    justify-content: space-between; 
+    padding: auto;
+ }
+
+
+
+legend {
+    font-weight: bold;
+    color: var(--main-color);
+    font-size: larger;
+}
+
+#informazioni {
+    border-radius: 5px;
+    height: 50px;
+    width: 250px;
+
+}
+
+#obbligatorio {
+    font-size: smaller;
+}
+
+#normativa {
+    display: flex;
+}
+
+.scarica_app {
+    text-align: left;
+
+}
+
+
+table {
+    width: 100%;
+    border-collapse:collapse;
+    margin: 1em auto;
+}
+
+
+thead {
+    background-color: var(--arancione);
+    border: 2px solid var(--main-color);
+
+}
+
+tbody {
+    background-color: #f2eeb3;
+    border: 2px solid var(--main-color);
+}
+
+tr {
+    border-bottom: #3314a6;
+    border: 2px solid var(--main-color)
+
+}
+
+footer {
+    background-color: #f2eeb3;
+    padding: 15px;
+    font-style: italic;
+    font-weight: bold;
+}
+
+@media (max-width:768px) {
+    nav ul {
+        align-items: flex-start;
+        padding: 10px;
+        flex-direction: column
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+}

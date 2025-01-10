@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction:column;
+            align-items: center;
+            justify-content: center;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: rgb(76, 4, 220);
+            height: 100vh;
+           
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 2em;
+            color:white
+           
+        }
+
+        fieldset {
+            border-radius: 10%;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            width: 300px;
+            border-style: solid;
+
+            
+        }
+        legend {
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-align: center;
+            text-shadow: 1px;
+            color: white;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: white;
+            font-size: 1em;
+        }
+
+        input {
+            margin: 10px 0px;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            border-radius: 5px;
+            padding:5px;
+            
+        }
+
+        button {
+            padding: auto;
+            background-color: #4e11dd;
+            color: white;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color:red;
+        }
+
+        #messaggio-errore {
+            color: red;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>PAGINA DI LOGIN</h1>
+    </header>
+    <main>
+        <fieldset>
+            <legend>LOGIN</legend>
+            <label for="username">Username</label>
+            <input type="text" id="username"/>
+            <label for="password">Password</label>
+            <input type="password" id="password" />
+            <button type = "button" onclick ="accedi()">Accedi</button>
+            <div id = "messaggio-errore"></div>
+        </fieldset>
+    </main>
+    <footer>
+
+    </footer>
+    <script>
+        const usernameCorretto = "admin";
+        const passwordCorretto = "admin1234";
+
+        function accedi (){
+            let username = document.getElementById("username").value;
+            let password = document.getElementById("password").value;
+            let messaggioErrore = document.getElementById("messaggio-errore");
+            
+            if (username === usernameCorretto && password === passwordCorretto) {
+                localStorage.setItem("username", username);
+                window.location.href="./benvenuto.html";
+            } else {
+                messaggioErrore.textContent = "CREDENZIALI NON CORRETTE !!! Riprovare per favore";
+            }
+        }
+    </script>
+</body>
+</html>

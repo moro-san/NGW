@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+nav {
+    background-color: coral;
+    color: wheat;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+}
+
+
+ul {
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+
+}
+
+.user-container {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding: 5px;
+
+}

@@ -1,0 +1,10 @@
+label, input {
+    padding: 5 px;
+    margin: 5px;
+}
+
+button {
+   background-color: coral;
+   color: aliceblue;
+   font-weight: bold;
+}

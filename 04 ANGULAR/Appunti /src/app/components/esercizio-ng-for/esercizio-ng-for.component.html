@@ -1,0 +1,62 @@
+<!--Esercizio Profilo Utente-->
+<fieldset>
+    <legend>Profilo utente</legend>
+    <label>Seleziona il tuo ruolo</label>
+    <select [(ngModel)]="ruoloSelezionato">
+        <option *ngFor="let utente of ruolo">
+            {{utente}}
+        </option>
+    </select>
+    <div *ngIf="ruoloSelezionato">
+        <p>Hai selezionato {{ruoloSelezionato}}</p>
+    </div>
+    <div [ngSwitch]="ruoloSelezionato">
+        <div *ngSwitchCase="'Admin'">Può vedere i dati personali, modificare impostazioni e gestire utenti</div>
+        <div *ngSwitchCase="'Utente'">Può vedere i dati personali e modificare alcune impostazioni</div>
+        <div *ngSwitchCase="'Ospite'">Può vedere solo le informazioni di base e non può modificare nulla</div>
+    </div>
+</fieldset>
+
+
+<!--Esercizio ngSwitch-->
+<fieldset>
+    <legend>Esercizio ngSwitch</legend>
+    <br/>
+    <div [ngSwitch]="status">
+        <div *ngSwitchCase=" 'attivo' ">Lo stato è attivo</div>
+        <div *ngSwitchCase="'inattivo'">Lo stato è inattivo</div>
+        <div *ngSwitchCase="'in attesa'">Lo stato è in attesa</div>
+        <div *ngSwitchDefault>Lo stato è sconosciuto</div>
+    </div>
+</fieldset>
+
+
+<!--Esercizio ngModel-->
+<fieldset>
+    <legend>Esercizio ngModel</legend>
+    <p>Lista Paesi</p>
+    <label>Seleziona uno dei paesi:</label>
+    <select [(ngModel)]="selezionaPaese">
+        <option *ngFor="let paese of paesi">
+        {{paese}}
+        </option>
+    </select>
+    <div *ngIf="selezionaPaese">
+        <p>Hai selezionato {{selezionaPaese}}</p>
+    </div>
+</fieldset>
+
+
+<!--Esercizio ngFor-->
+<fieldset>
+    <legend>
+        Esercizio ngFor
+    </legend>
+        <p>Lista nomi ed età</p>
+    <div>
+        <ul>
+            <li *ngFor = "let persone of utenti; let i = index">
+            {{i+1}}. Ciao sono {{persone.nome}} e ho {{persone.eta}} anni</li>
+        </ul>
+        </div> 
+</fieldset>

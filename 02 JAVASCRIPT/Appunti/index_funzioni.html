@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funzioni</title>
+</head>
+<body>
+    <header>
+        <h1>Funzioni</h1>
+    </header>
+    <main>
+
+    </main>
+    <footer>
+
+    </footer>
+
+    <script>
+        //Funzioni
+        let a = 6
+        let b = 3
+        let risultato = 0
+        let operazione = '/';
+        let risultatoPotenza = 0;
+        switch(operazione){
+            case '+':
+                risultato = a + b;
+                console.log (risultato);
+                firma ()
+                break;
+            case '-':
+                risultato = a - b;
+                console.log (risultato);
+                firma ()
+                break;
+            case '/':
+                divisione (a,b);
+                firma ()
+                break;
+            case '*':
+                // argomenti
+                prodotto (a,b);
+                firma ()
+                break;
+            case "^":
+                risultatoPotenza = potenzaQuadrato(a)
+                console.log(risultatoPotenza)
+            default:
+                console.log("err");
+                        
+            }
+
+            function firma () {
+                console.log ("##############");
+                console.log ("##############");
+                console.log ("##Marco Morelli##");
+                console.log ("##############");
+                console.log ("##############");
+
+            }
+
+            function prodotto (a,b) {
+                let risultato = a * b;
+                console.log (risultato);
+            }
+
+            function divisione (numeratore,denominatore) {
+                if (denominatore != 0){
+                    let risultato = numeratore / denominatore;
+                    console.log (risultato);
+                } else {
+                    console.error("Denominatore errore");
+                    console.warn("Denominatore errore");
+                }
+                
+            }
+
+            function potenzaQuadrato (numero) {
+                let risultato = numero * numero
+                return risultato
+            }
+
+            
+            function sommaN (...nVariabili) {
+                let somma = 0;
+                for (let i = 0; i < nVariabili.length; i++) {
+                    somma = somma + nVariabili[i];
+                }
+                console.log(somma);
+            }
+    </script>
+</body>
+</html>

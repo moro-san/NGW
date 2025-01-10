@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <header>
+        <h1>Benvenuto <span id = "nome"></span></h1>
+    </header>
+    <main>
+
+    </main>
+    <footer>
+        
+    </footer>
+
+    <script>
+        //questo codice si eseguirà all'avio della pagina
+        //voglio che si prenda il valore memorizzato 
+        //nella chiave 'name'
+        //e stampi a schermo il mio nome
+        let user = localStorage.getItem("nome");
+        //STRINGA --> oggetto
+        //let credenziali = localStorage.getitem("oggetto")
+        //credenziali = credenziali.json
+        document.getElementById("nome").innerHTML = user;
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funzioni Asincrone</title>
+</head>
+<body>
+    <header>
+        
+    </header>
+    <main>
+        <button type="button" onclick="normale()">Funzione normale</button>
+        <button type="button" onclick="asincrona()">Funzione asincrona</button>
+        <h1>Lista di Drink :</h1>
+        <div id = "contenitore-drinks"></div>
+    </main>
+    <footer>
+
+    </footer>
+    <script>
+        //funzioni normali 
+        function normale () {    
+            let url = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita';
+            let risposta = fetch (url);
+            console.log(risposta);
+        }
+
+
+        // funzione asincrona async/await
+        async function asincrona() {
+            let url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita";
+            let risposta = await fetch (url);
+            console.log (risposta);
+            let risposta_json = await risposta.json();
+            console.log(risposta_json);
+            
+            //iterare la lista contenuta dentro il campo drinks
+            let drinks = risposta_json.drinks;
+            console.log (drinks);
+
+            for (let i = 0; i <drinks.length; i++){
+                //creo elementi HTML
+                let h3 = document.createElement("h3");
+                let img = document.createElement("img");
+                let p = document.createElement("p");
+
+                //riempire elementi HTML
+                h3.innerHTML = drinks[i].strDrink;
+                img.src = drinks[i].strDrinkThumb;
+                img.width = 150;
+                img.height = 150;
+                p.innerHTML = drinks[i].strInstructionsIT;
+
+                //creo contenitore
+                let contenitore = document.createElement("div");
+                contenitore.appendChild(h3);
+                contenitore.appendChild(img);
+                contenitore.appendChild(p);
+
+                let contenitore_drinks = document.getElementById("contenitore-drinks");
+                contenitore_drinks.appendChild(contenitore);
+                   
+                }
+
+            }
+        
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+<div class="user-container">
+    <div *ngFor="let utente of userList" class="card-container" >
+        <h1>{{NameFromCocktails}}</h1>
+        <img src={{utente.avatar}} alt = "immagine utente"/>
+        <div class="item">{{utente.first_name}}</div>
+        <div class="item">{{utente.last_name}}</div>
+        <div class="item">{{utente.email}}</div>
+    </div>
+</div>
+
+
+    

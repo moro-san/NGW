@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipolazione DOM + EVENT LISTENER</title>
+    <style rel ="stylesheet" href="./style.css"></style>
+</head>
+<body>
+    <header>
+
+    </header>
+    <main>
+        <h1 id = "h1-mio"> Sito mio </h1>
+        <div id = "container"></div>
+        <button type="button" id = "btn-mio">Cambia Colore</button>
+        <img id="logo" src="img/logo.JPG" width="200" height="100"/> 
+    </main>
+    <footer>
+        <h3> login form :</h3>
+        <input type="text" id="username"/>
+        <button onclick="stampaInput()">Accedi</button>
+
+
+    </footer>
+
+    <script>
+        //EVENTI DIRETTI (button & click)
+        function stampaInput(){
+            let input = document.getElementById("usernam");
+            console.log(input.value);
+        }
+
+        //EVENTI LISTENER
+        let buttonMio = document.getElementById('btn-mio')
+
+        buttonMio.addEventListener("click", function (){
+            console.log("hello");
+        });
+
+        buttonMio.addEventListener("mouseenter", stampa);
+
+        //let hMIo = document.getElementById("h1-mio")
+        //hMio.addEventListener ("mouseleave", function (){
+        //    console.warn("h1 leave");
+        //});
+
+        function stampa () {
+            console.log("prova");
+        }
+
+        buttonMio.addEventListener("mouseenter", stampa);
+        
+        function cambiaColoreUno (){
+            let hMio = document.getElementById("h1-mio");
+            hMio.style.color = "green";
+        }
+
+        function cambiaColoreDue (){
+            let hMio = document.getElementById("h1-mio");
+            hMio.style.color = "black";
+        }
+
+        function creazioneDiv () {
+            let container = document.getElementById("container");
+            container.classList.add("div-bello");
+            //adesso creiamo un h1
+            let h2Creato = document.createElement("h2");
+            //Elementi HTML
+            h2Creato.innerHTML = "endri";
+            //stringa
+            //h2Creato.innerText = "bader";
+            container.appendChild(h2Creato);
+
+        }
+
+        buttonMio.addEventListener("mouseenter", cambiaColoreUno);
+        buttonMio.addEventListener("mouseleave", cambiaColoreDue);
+        buttonMio.addEventListener("click", creazioneDiv)
+
+        function cambiaSrc () {
+            let immagineMIa = document.getElementById("logo");
+            console.log(immagineMIa.getAttribute("src"));
+            immagineMIa.src
+            console.log(immagineMIa.src);
+            if (immagineMIa.getAttribute("src") == "img/gatto.jpeg"
+
+            ) {
+                immagineMIa.src = "img/logo.JPG";
+                return;
+            }
+            immagineMIa.src = "img/gatto.jpeg"
+        }
+
+        let immagineMIa = document.getElementById("logo");
+        immagineMIa.addEventListener("click", cambiaSrc);
+
+        
+    </script>
+    
+</body>
+</html>

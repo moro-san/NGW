@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+</head>
+<body>
+    <h1>Hello world sto imparando Javascript</h1>
+    <script>
+        console.log ("Hello World!");
+
+        //variabili 
+        let nome = 'elio';
+        nome ='luca';
+        console.log(nome);
+
+        //costanti
+        const persona ='Luca';
+        console.log(persona);
+
+        //casting 
+        let numero='10';
+        console.log(numero);
+
+        let numeroCastato = Number(numero);
+        console.log(numeroCastato);
+
+
+        //liste o array
+        let listaNome = [1,2,'elio', true,'saggio',1.75];
+        console.log(listaNome);
+        console.log(listaNome[0]);
+        console.log(listaNome.length);
+
+        //dizionari o oggetti
+        let clienti = {
+            nome:'andrea',
+            cognome:'saggio',
+            eta:28,
+            isVivo:true,
+            cibipreferiti: ['pizza', 'lasagna', 'sushi']
+        };
+
+        console.log(clienti);
+
+
+        //undefined - variabile non ha ricevuto un valore e non è intenzionale
+        let abc;
+        console.log(abc);
+
+        //NULL best practice che il programmatore INTENZIONALMENTE INSERISCE, indicare che quel valore è attualmente nullo
+        let a = null;
+        console.log(a);
+
+        //stringhe - tipo di dato "particolare" - nasce con delle funzionalità
+        let stringaNome = 'Andrea Saggio';
+        console.log(stringaNome.length);
+        console.log(stringaNome.toUpperCase());
+
+
+       
+        //Condizioni (blocchi if-else)
+        let b = 9;
+        let c = 4;
+        if (a < b) {
+            console.log("a è più grande di b");
+        } else {
+            console.log("b è più grande di a");
+        }
+
+        //If - else if - else   
+        if (b < 5) {
+            console.log("b è minore di 5");
+        }
+        else if (b < 4) {
+            console.log("b è minore di 4");
+        }
+        else {
+            console.log ("errore");
+        }
+
+        // Switch case
+        let operazione = '+'
+        switch (operazione) {
+            case "+":
+                console.log ("più");
+                break;
+            case "-":
+                console.log ("meno");
+                break;
+            case "/":
+                console.log ("diviso");
+                break;
+            case "*":
+                console.log ("per");
+                break;
+
+        }
+
+        // Operatori logici AND (&&) - OR (||) - NOT (!)
+        let z = 5;
+        let x = 4;
+
+        // AND entrambe vere
+        if (z > 4 && x < 5) {
+            console.log("AND");
+        }
+
+        // OR almeno una delle due vere
+        if (z > 4 || x < 1) {
+            console.log("OR")   
+        }
+
+        // XOR esclusivo solo una delle due è vera
+        if (z > 4 ^ x < 1) {
+            console.log("XOR")
+        }
+
+        // NOT 
+        let isAlive = false;
+        if (!isAlive) {
+            console.log ("NOT")
+        }
+
+        //CICLI FOR 
+        // VARIABILI SE NASCONO IN UN CICLO MUOIONO ALLA FINE DEL CICLO
+        //for (variabile iterativa; condizione ; incremento)
+        //      {istruzioni}
+        for (let i = 0; i < 10; i++) {
+            console.log (i);
+        }
+        // possiamo stampare stringhe insieme alle variabili con le backtick `` (option + \)
+        for (let i = 0; i < 10; i++) {
+            console.log (`siamo all'iterazione : ${i}`);
+        }
+
+        //CICLI WHILE
+        // while (condizione fintanto che deve essere vera) 
+        //  {istruzione}
+        let j = 0;
+        while (j < 10) {
+            console.log (j);
+            j++;
+        }
+
+        //Ciclo while con funzione prompt 
+        let risposta = prompt ("Inserisci un valore: ");
+        console.log (risposta);
+
+        while (!risposta) {
+            console.log(risposta);
+            risposta = prompt ("Inserisci un valore: ");
+        }
+
+        // Ciclo FOR con liste
+        let listaNomi = ["andrea", "tony", "salvatore", "eliana", "domenico"]; 
+        console.log(listaNomi);
+
+        for (let j = 0; j < listaNomi.length; j++){
+            console.log(listaNomi[j]);
+        }
+    </script>
+</body>
+</html>

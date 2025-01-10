@@ -1,0 +1,22 @@
+.card-container{
+    width: 20rem;
+    border: 3px solid #0066cc;
+    background-color: cornflowerblue;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    color: white;
+}
+
+img {
+    width:50%;
+    
+}
+
+.item {
+    text-align: center;
+    
+   
+}

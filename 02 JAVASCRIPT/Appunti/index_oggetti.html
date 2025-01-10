@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oggetti</title>
+</head>
+<body>
+    <header>
+
+    </header>
+    <main>
+
+    </main>
+    <footer>
+
+    </footer>
+    <script>
+        // OGGETTI (DIZIONARI)
+
+        let nome = 'marco';
+
+        const oggetto = {
+            // Proprietà di un oggetto
+            nome : "andrea",
+            cognome : "saggio", 
+            eta : 28,
+            isVivo : true,
+
+            // Metodi
+            // per definire un metodo
+            //this. prende la variabile nome locale in oggetto (andrea) e non quella globale (marco che si trova fuori l'oggetto)
+            saluta: function () {
+                console.log("Mi chiamo " + this.nome); //console.log (`Mi chiamo $ {this.nome} e sto bene`)
+            },
+        };
+
+        console.log(oggetto["cognome"]);
+        oggetto.saluta();
+    </script>
+    
+</body>
+</html>

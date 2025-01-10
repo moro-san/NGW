@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <header>
+        <h1>Pagina di Login</h1>
+    </header>
+    <main>
+        
+        <input type="text" id="user"/>
+        <button type="button" onclick="accedi()">Accedi</button>
+
+    </main>
+    <footer>
+
+    </footer>
+    
+
+    <script>
+
+        //let credenziali = {
+        // user : "blabla",
+        // pass : "blabla", 
+        //ricordami: false,
+        //captcha: false}
+        function accedi (){
+
+        //LOCALSTORAGE - settare o prendere valori, OBBLIGATORIAMENTE STRINGA
+
+        //Per settare i valori dobbiamo dare oltre al valore stesso
+        // anche la chiave/identificativo per poterlo successivamente ripescare
+        //per prendere i valori, dobbiamo passare la chiave
+
+        let user = document.getElementById("user").value;
+        localStorage.setItem("name", user);
+        //OGGETTO --> STRINGA
+        // localStorage.setItem("oggetto", credenziali.stringfy);
+        //per cambiare pagina
+        window.location.href = "./home.html";
+
+
+        }
+    
+    
+        
+
+    </script>
+    
+</body>
+</html>

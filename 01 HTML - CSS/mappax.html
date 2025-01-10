@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <meta name ="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name ="description" content="Sito dell'associazione giovanile @MappaX">
+        <title>@MappaX </title>
+        <link rel="stylesheet" href="styles.css">
+        <style>
+            button{
+                background-color:rgb(51, 20, 166);
+                color: white;
+                font-size: 1rem;
+                padding: 5px 10px;
+                border-radius: 5px;
+                border: solid #f2eeb3;
+            }
+
+            button:active {
+                background-color: rgb(242, 136, 75);
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>@MappaX</h1>
+            <img src="img/logo.JPG" width="100" alt="Logo" style="border-radius: 50%;"/>
+            <h2 style="font-style: italic;text-align: center;">Superpowers for communities</h2>
+            <nav>
+                <ul style="background-color:rgb(51, 20, 166);">
+                    <li style="color: white;"> Chi siamo</style=></li>
+                    <li style="color: white;"> Cosa facciamo</a></li>
+                    <li style="color: white;">Dicono di noi</a></li>
+                    <li style="color: white;">Contattaci</a></li>
+        
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section id="cosa_fai">        
+                <article>
+                    <h3>Segnala problemi</h3>
+                    <p>Indica un problema sul tuo territorio e condividilo con i tuoi vicini! <br/>La tua amministrazione locale sarà informata, così che possa fare la differenza.</p>
+                </article>
+                <article>
+                    <h3>Proponi progetti o soluzioni</h3>
+                    <p>Dal giardino sotto casa al grande evento. <br/>Diventa protagonista dello sviluppo del tuo quartiere, condividendo le tue idee.</p>
+                </article>
+                <article>
+                    <h3>Partecipa ad eventi</h3>
+                <p>Mercato di quartiere o passeggiata nella natura? <br/> Su @mappax puoi trovare ogni evento sul tuo territorio o proporne uno!</p>
+                </article>
+            </section>
+            <section id="segnalazioni tipo">
+                <h3>Segnalazioni tipo</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Utente</th>
+                            <th>Tipologia Segnalazione</th>
+                            <th>Descrizione</th>
+                        </tr>                 
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Mario Rossi</td>
+                            <td> <i> Mobilità</i></td>
+                            <td>Marciapiedi danneggiati e con barriere architettoniche</td>
+                        </tr>
+                        <tr>
+                            <td>Veronica Bossi</td>
+                            <td><i> Sicurezza</i></td>
+                            <td>Zone poco illuminate e potenzialmente pericolose</td>
+                        </tr>
+                        <tr>
+                            <td>Mauro Comisso </td>
+                            <td><i>Area verde</i></td>
+                            <td>Parco giochi bambini incolto e giochi dismessi</td>
+                        </tr>
+                        
+                    </tbody>
+    
+                </table>
+            </section>
+            
+        <section id="download_app">
+            <h3 >Scarica l'app</h3>
+            <p style="text-align: left;">Se vuoi partecipare al test dell'app segui le istruzioni di seguito:</p>
+            <ol>
+                <li class ="scarica_app"> Se hai un dispositivo <i>Android</i>, puoi scaricarla dal <b>Play Store</b>.
+                </li>
+                <br>
+                <li class ="scarica_app">Per <i>iOS</i>, basta scaricare TestFlight dall'<b>App Store</b> e poi cliccare su questo link: 
+                    <a href="https://testflight.apple.com/join/FT1JYCDt"><b>Scarica l'app</b></a>
+                </li>        
+            </ol>
+        </section>
+    
+       
+        <section id="contatti">
+            <fieldset>
+                <legend>Per maggiori informazioni</legend>
+                <form id="form">
+                    <label for ="nome">Nome</label>
+                    <input type="text" id="nome" name="nome">
+                    <label for="cognome">Cognome</label>
+                    <input type="text" id="cognome" name="cognome">
+                <div id="genere">
+                    <label for="genere">Genere</label>
+                    <input type="radio" id="genere_maschio"name="genere" value="maschio">
+                    <label for="genere_maschio"><i>Maschio</i></label>
+                    <input type="radio" id="genere_femmina" name="genere" value="femmina">
+                    <label for="genere_femmina"><i>Femmina</i></label>
+                    <input type="radio" id="genere_altro "name="genere" value="non_voglio_specificare">
+                    <label for="genere_altro"><i>Nono voglio specificare</i></label>
+                </div>
+                    <label for="utente">Tipologia Utente</label>
+                    <select id="utente" name="utente">
+                        <option value="Cittadino">Cittadino</option>
+                        <option value="PA">Pubblica amministrazione</option>
+                        <option value="Associazione">Associazione</option>
+
+                    </select>
+
+                   
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email"placeholder="email@example.it">
+                    
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Inserisci password">
+                    
+                   
+                    <label for="informazioni">Richiesta Informazioni</label>
+                    <textarea id="informazioni" name="informazioni" placeholder="Scrivi qua ..."></textarea>
+                <div id="normativa">
+                    <input type="checkbox" id="termini">
+                    <label for="termini">Accetto i Termini e Condizioni*</label>
+                    
+                    <input type="checkbox" id="privacy">
+                    <label for="privacy">Informativa Privacy*</label>
+                </div>
+                    <p id="obbligatorio">* Obbligatorio per proseguire</p>
+                 
+                    <button type="submit">Invia</button>
+                </form>
+            </fieldset>           
+        </section>
+        </main>
+        <footer>
+            <p>Diritti Riservati @MappaX Associazione Giovanile</p>           
+        </footer>
+    </body>   
+</html>

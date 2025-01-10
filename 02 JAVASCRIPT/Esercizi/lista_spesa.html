@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista della spesa</title>
+</head>
+<body>
+    <h1>Lista della spesa</h1>
+    <script>
+        let listaSpesa = [];
+        let risposta = "si";
+        while (risposta == "si") {
+            let prodotto = prompt("Ciao utente, cosa vuoi aggiungere alla lista della spesa?");
+            if (prodotto) {
+                listaSpesa.push(prodotto);
+                alert("Hai aggiunto un nuovo prodotto alla tua lista");
+            
+            } 
+            risposta = prompt("Vuoi aggiungere altri prodotti alla tua lista? (si/no/esci)");
+            while (risposta != "si" && risposta != "no" && risposta != "esci")
+            {
+                risposta = prompt("Per favore utente inserisci solo si/no/esci");
+            }
+            if (risposta == "no" || risposta == "esci") {
+                alert ("Hai terminato la tua lista della spesa. Ricorda: 'Sei quello che mangi!!!'");
+            }
+            
+        }
+            console.log("La tua lista della spesa finale è:", listaSpesa);            
+    </script>
+</body>
+</html>

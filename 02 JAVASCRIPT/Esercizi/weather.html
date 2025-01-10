@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Web App</title>
+    <style>
+        body {
+            margin: 0;
+            font-family:Arial, Helvetica, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background:linear-gradient(to bottom, #3f09f2, #f37405);
+        } 
+
+        header {
+            text-align: center;
+            padding: 20px;
+            color: white;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        
+        header p {
+            margin: 5px 0;
+            font-size: 16px;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        #contenitore {
+            max-width: 400px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        #meteo-app {
+            padding:20px;
+            text-align:center;
+        }
+
+        #barra-ricerca {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        #citta-input {
+            flex-grow: inherit;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid black;
+        }
+
+        #cerca {
+            padding: 10px;
+            font-size: 16px;
+            color: white;
+            background-color: blue;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #info-meteo h1 {
+            font-size: 48px;
+            color: #333;
+            margin: 10px 0;
+        }
+
+        #icona-meteo {
+            width: 65px;
+            height: 65px;
+            margin:10px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            color: white;
+            position: absolute;
+            bottom: 0;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Meteo Web App</h1>
+        <h2>Se non credi all'oroscopo non crederai alle previsioni meteo</h2>
+        <p>Il meteo della tua città</p>
+    </header>
+    <main>
+        <div id="contenitore">
+            <div id="meteo-app">
+                <div id="barra-ricerca">
+                    <input type="text" id="citta-input" placeholder="Inserisci la città" />
+                    <button id="cerca" type="button">Cerca</button>
+                </div>
+                <div id="info-meteo">
+                    <h1 id="nome-citta">Città</h1>
+                    <img id = "icona-meteo" src="" alt="Condizioni meteo" />
+                    <h1 id="temperatura"> °C</h1>
+                    <p id="condizione">Condizione</p>
+                    <div id ="dettagli-meteo">
+                        <p>Vento: <span id="velocita-vento">--</span></p>
+                        <p>Umidità: <span id="umidita">--</span></p>
+                        <p>Visibilità: <span id="visibilita" >--</span></p>
+                        <p id="ora-locale">Ora locale: --</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&#169; Marco Morelli s.r.l. P.IVA 436824624648 - Powered by WeatherAPI </p>
+    </footer>
+    <script>
+        const chiaveApi = ""
+
+        document.getElementById("cerca").addEventListener("click", function () {
+            let citta = document.getElementById("citta-input").value;
+            
+            ottieniMeteo(citta);
+        });
+
+        async function  ottieniMeteo(citta) {
+            const url = `http://api.weatherapi.com/v1/current.json?key=${chiaveApi}&q=${citta}&aqi=no`;
+
+            const risposta = await fetch (url);
+
+            const dati = await risposta.json();
+            aggiorna(dati);
+        }
+
+        function aggiorna (dati) {
+            const {location, current} = dati;
+
+            document.getElementById("nome-citta").textContent = `${location.name}, ${location.region}, ${location.country}`;
+
+            document.getElementById("temperatura").textContent=`${current.temp_c}°C`;
+
+            document.getElementById("condizione").textContent = current.condition.text;
+
+            let iconaMeteo = document.getElementById("icona-meteo");
+            iconaMeteo.src = `https:${current.condition.icon}`;
+            iconaMeteo.alt = current.condition.text;
+
+            document.getElementById("velocita-vento").textContent = `${current.wind_kph} km/h (${current.wind_dir})`;
+
+            document.getElementById("umidita").textContent = `${current.humidity}%`;
+
+            document.getElementById("visibilita").textContent = `${current.vis_km} km`;
+
+            document.getElementById("ora-locale").textContent = `Ora locale: ${location.localtime}`;
+        }
+
+    </script>
+</body>
+</html>

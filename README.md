@@ -1,0 +1,9 @@
+Next Generation Work Projects
+
+- HTML / CSS
+- JAVASCRIPT
+- TYPESCRIPT
+- ANGULAR
+- PYTHON (SELENIUM, FastAPI)
+- SQL 
+- DOCKER 

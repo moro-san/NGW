@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forum</title>
+    <style>
+        button{
+            background-color:rgb(51, 20, 166);
+            color: white;
+            font-size: 1rem;
+            padding: 5px 10px;
+            border-radius: 5px;
+            border: solid #f2eeb3;
+        }
+
+        button:active {
+            background-color: rgb(242, 136, 75);
+        }
+        form {
+    text-align: left;
+    font-weight: bold;
+    margin: 1em auto;   
+}
+
+form label {
+ display: block;
+ margin-top: 1em;
+}
+
+
+legend {
+    font-weight: bold;
+    color: rgb(51, 20, 166);
+    font-size: larger;
+}
+
+body {
+    background-color: #f2eeb3;
+}
+
+h1 {
+    text-align: center;
+}
+
+
+    </style>
+   
+</head>
+<body>
+    <header>
+        <h1>Form di Registrazione</h1>
+    </header>
+    <main>
+        <section id="contatti">
+            <fieldset>
+                <legend>PER MAGGIORI INFORMAZIONE COMPILATE IL FORM</legend>
+                <form id="form">
+                    <label for ="nome">Nome</label>
+                    <input type="text" id="nome" name="nome">
+                    <label for="cognome">Cognome</label>
+                    <input type="text" id="cognome" name="cognome">
+                
+                   
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email"placeholder="email@example.it">
+                    
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Inserisci password">
+                    <br/>
+                    <br/>
+
+                    <button type="button" id="bottone">Invia</button>
+                </form>
+            </fieldset>           
+        </section>
+
+    </main>
+    <footer>
+
+    </footer>
+    <script>
+        let bottone = document.getElementById("bottone");
+
+        bottone.addEventListener("click", function () {
+            let nome = document.getElementById("nome").value;
+            let cognome = document.getElementById("cognome").value;
+            let email = document.getElementById("email").value;
+            let password = document.getElementById("password").value;
+
+        if (nome === "" || cognome === "" || email === "" || password === "") {
+            alert ("Errore: ciao utente per favore compila tutti i campi !!!");
+            return;
+        }
+        let messaggio = document.createElement("h1");
+        messaggio.textContent = `Ciao ${nome}`;
+
+        let lista = document.createElement("ul");
+
+        let listaNome = document.createElement ("li");
+        listaNome.innerHTML = `Nome: ${nome}`;
+        lista.appendChild(listaNome);
+
+        let listaCognome = document.createElement ("li");
+        listaCognome.innerHTML = `Cognome: ${cognome}`;
+        lista.appendChild(listaCognome);
+
+        let listaEmail = document.createElement ("li");
+        listaEmail.innerHTML = `Email: ${email}`;
+        lista.appendChild(listaEmail);
+
+        let listaPassword = document.createElement ("li");
+        listaPassword.innerHTML = `Password: ${password}`;
+        lista.appendChild(listaPassword);
+
+        let creazioneDiv = document.createElement("div");
+        creazioneDiv.appendChild(messaggio);
+        creazioneDiv.appendChild(lista);
+
+        document.body.appendChild(creazioneDiv);
+
+        }
+    )
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+services:
+  mariadb:
+    image: docker.io/bitnami/mariadb:11.4
+    volumes:
+      - 'mariadb_data:/bitnami/mariadb'
+    environment:
+      # ALLOW_EMPTY_PASSWORD is recommended only for development.
+      - ALLOW_EMPTY_PASSWORD=yes
+      - MARIADB_USER=bn_wordpress
+      - MARIADB_DATABASE=bitnami_wordpress
+    networks:
+      - net1 # Collegamento alla rete net1
+
+  wordpress:
+    image: docker.io/bitnami/wordpress:6
+    ports:
+      - '8881:8080'
+      - '8882:8443'
+    volumes:
+      - 'wordpress_data:/bitnami/wordpress'
+    depends_on:
+      - mariadb
+    environment:
+      # ALLOW_EMPTY_PASSWORD is recommended only for development.
+      - ALLOW_EMPTY_PASSWORD=yes
+      - WORDPRESS_DATABASE_HOST=mariadb
+      - WORDPRESS_DATABASE_PORT_NUMBER=3306
+      - WORDPRESS_DATABASE_USER=bn_wordpress
+      - WORDPRESS_DATABASE_NAME=bitnami_wordpress
+    networks:
+      - net1 # Collegamento alla rete net1
+
+volumes:
+  mariadb_data:
+    driver: local
+  wordpress_data:
+    driver: local
+
+networks:
+  net1: # Definizione della rete net1
+    driver: bridge

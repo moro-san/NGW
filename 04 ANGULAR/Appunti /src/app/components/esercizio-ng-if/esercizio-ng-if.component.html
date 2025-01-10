@@ -1,0 +1,12 @@
+<h1>Esercizio ngIf - else</h1>
+<div>
+    <button (click)="Visibilita()">Mostra paragrafo</button>
+    <p *ngIf="isVisibile">Clicca sul bottone</p>
+    <ng-container *ngIf="isCaricamento; then caricamento; else caricato"></ng-container>
+    <ng-template #caricamento>
+        <p>Il paragrafo si sta caricando...</p>
+    </ng-template>
+    <ng-template #caricato>
+        <p *ngIf="!isVisibile">Il paragrafo si è caricato</p>
+    </ng-template> 
+  </div>

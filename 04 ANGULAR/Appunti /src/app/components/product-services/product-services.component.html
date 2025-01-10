@@ -1,0 +1,7 @@
+<p>product-services works!</p>
+<div *ngFor="let item of drink">
+    <div>id: {{item.idDrink}}</div>
+    <div>nome del drink: {{item.strDrink}}</div>
+    <img src="{{item.strDrinkThumb}}" alt = "immagine drink"/>
+    <button (click)="goToUser(item.strDrink)">Vai alla pagina userList</button>
+</div>
